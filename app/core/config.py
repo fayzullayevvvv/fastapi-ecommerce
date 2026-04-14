@@ -2,11 +2,16 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    # SERVER
+    debug: bool
+    host: str
+    port: int
+
     # JWT
-    secret_ky: str
+    secret_key: str
     algorithm: str
-    access_token_minutes: int
-    refresh_token_days: int
+    access_expire_minutes: int
+    refresh_expire_days: int
 
     # DATABASE
     db_host: str
