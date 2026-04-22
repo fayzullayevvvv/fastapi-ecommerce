@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 
-from .routers import router
+
+app = FastAPI(title="FastAPI deploy")
 
 
-app = FastAPI(title="Ecommerce")
-app.include_router(router)
+@app.get('/')
+async def main():
+    return {'message': 'project is running...'}
